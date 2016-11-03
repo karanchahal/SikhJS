@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 
-import { Router, Route, IndexRoute, Link, hashHistory } from 'react-router';
-import { Author, Raag, Main, Raags, Authors, Bookmarks, Hukamnama, About, Baani, SGGS, Nitnem, Calendar, Shabad, Shabads } from './components';
-
 import { getSettings, setSettings } from './constants';
+
+import { Main } from './components';
+
+import { Router, browserHistory } from 'react-router';
+
+import routes from './routes';
 
 export default class Root extends Component {
   constructor(p) {
@@ -20,28 +23,12 @@ export default class Root extends Component {
     this.setState({ nightMode: !this.state.nightMode });
   }
   render() {
-    const App = props => (<Main onNightModeToggle={() => this.toggleNightMode()} nightMode={this.state.nightMode} {...props} />);
+    const App = props => (
+      <Main onNightModeToggle={() => this.toggleNightMode()} nightMode={this.state.nightMode} {...props} />
+    );
 
     return (
-      <Router history={hashHistory} onUpdate={() => document.body.scrollTop = 0}>
-        <Route path="/" component={App} >
-          <Route path="about" component={About} />
-          <Route path="sggs" component={SGGS} />
-          <Route path="sggs/:ang" component={SGGS} />
-          <Route path="calendar" component={Calendar} />
-          <Route path="shabads" component={Shabads} />
-          <Route path="bookmarks" component={Bookmarks} />
-          <Route path="authors" component={Authors} />
-          <Route path="author/:id" component={Author} />
-          <Route path="raags" component={Raags} />
-          <Route path="raag/:id" component={Raag} />
-          <Route path="shabads/:q" component={Shabads} />
-          <Route path="shabad/:id" component={Shabad} />
-          <Route path="nitnem" component={Nitnem} />
-          <Route path="nitnem/:baani" component={Baani} />
-          <Route path="hukamnama" component={Hukamnama} />
-        </Route>
-      </Router>
+      <Router history={browserHistory} onUpdate={() => document.body.scrollTop = 0} routes={routes(App)} />
     );
   }
 }

@@ -15,7 +15,7 @@ export class HukamnamaView extends Component {
     const { ang, english, punjabi, gurbani, date, } = this.props;
     return <div>
       <Toolbar title={`Hukamnama ${date}`}>
-        <Link to={`/SGGS/${ang}`}><Button ripple raised accent >{`Open Ang ${ang}`}</Button></Link>
+        <Link to={`SGGS/${ang}`}><Button ripple raised accent >{`Open Ang ${ang}`}</Button></Link>
         <Tabs activeTab={this.state.activeTab} onChange={activeTab => this.setState({ activeTab })} ripple>
           <Tab style={{ fontWeight: this.state.activeTab === 0 ? 900 : 100 }}> Hukam </Tab>
           <Tab style={{ fontWeight: this.state.activeTab === 1 ? 900 : 100 }}>English Translation</Tab>

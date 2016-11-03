@@ -1,6 +1,5 @@
 import React from 'react';
 import { baanies, getSettings, setSettings } from '../../constants';
-import Greeting from '../Greeting';
 import styles from './styles';
 
 import { Link } from 'react-router';
@@ -19,7 +18,7 @@ export default ({ children, onNightModeToggle, nightMode }) => {
     setSettings(newSettings);
   };
 
-  const nBaanies = baanies.nitnem.map(({ title }) => <Link key={title} to={`/nitnem/${title}`}>{title}</Link>);
+  const nBaanies = baanies.nitnem.map(({ title }) => <Link key={title} to={`nitnem/${title}`}>{title}</Link>);
 
   return (
     <div style={styles.wrapper}>
@@ -37,26 +36,25 @@ export default ({ children, onNightModeToggle, nightMode }) => {
 
         <Drawer title="SikhJS" style={styles.drawer(nightMode)}>
           <Navigation>
-            <Link to={`/`} >Home</Link>
-            <Link to={`/hukamnama`} >Hukamnama</Link>
-            <Link to={`/sggs`} >Sri Guru Granth Sahib</Link>
-            <Link to={`/nitnem`} >Nitnem</Link>
-            <Link to={`/shabads`} >Search Shabads</Link>
-            <Link to={`/calendar`} >Calendar</Link>
-            <Link to={`/authors`} >Authors</Link>
-            <Link to={`/raags`} >Raags</Link>
-            <Link to={`/bookmarks`} >Bookmarks</Link>
+            <Link to={`hukamnama`} >Hukamnama</Link>
+            <Link to={`sggs`} >Sri Guru Granth Sahib</Link>
+            <Link to={`nitnem`} >Nitnem</Link>
+            <Link to={`shabads`} >Search Shabads</Link>
+            <Link to={`calendar`} >Calendar</Link>
+            <Link to={`authors`} >Authors</Link>
+            <Link to={`raags`} >Raags</Link>
+            <Link to={`bookmarks`} >Bookmarks</Link>
 
             <a href="https://github.com/bogas04/SikhJS/issues/new" target="_blank">Report Issue</a>
 
-            <Link to={`/about`}>About</Link>
+            <Link to={`about`}>About</Link>
           </Navigation>
         </Drawer>
 
         <Content>
           <Hammer onSwipe={handleSwipe} direction={Hammer.DIRECTION_RIGHT}>
             <div id="baaniWrapper" style={styles.color(nightMode)}>
-              {children || <Greeting />}
+              {children}
             </div>
           </Hammer>
         </Content>

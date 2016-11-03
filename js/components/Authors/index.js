@@ -13,7 +13,7 @@ export const SearchCard = ({ id, author, gurmukhi, description }) => <Card style
     {`${author} ${gurmukhi}`}
   </CardTitle>
   <CardActions border>
-    <Link to={`/author/${id}`}><Button>More Info</Button></Link>
+    <Link to={`author/${id}`}><Button>More Info</Button></Link>
   </CardActions>
 </Card>;
 

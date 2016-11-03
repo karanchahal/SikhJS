@@ -13,8 +13,8 @@ export const SearchCard = withRouter(({ id, raag, gurmukhi, granth, ang, descrip
     {`${raag} ${gurmukhi}`}
   </CardTitle>
   <CardActions border>
-    <Button disabled={granth !== 1 && ang === 0} onClick={e => push(`/SGGS/${ang}`)}>{`Open Ang ${ang}`}</Button>
-    <Button onClick={e => push(`/raag/${id}`)}>More Info</Button>
+    <Button disabled={granth !== 1 && ang === 0} onClick={e => push(`SGGS/${ang}`)}>{`Open Ang ${ang}`}</Button>
+    <Button onClick={e => push(`raag/${id}`)}>More Info</Button>
   </CardActions>
 </Card>
 );

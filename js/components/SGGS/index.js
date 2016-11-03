@@ -124,7 +124,7 @@ export default withRouter(class SGGS extends Component {
 
   setAng(ang) {
     if (ang) {
-      this.props.router.push(`/sggs/${ang}`);
+      this.props.router.push(`sggs/${ang}`);
       this.setState({ lines: [] });
       this.updateLines(ang);
       this.setState({ ang });

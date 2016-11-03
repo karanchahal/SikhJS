@@ -30,8 +30,8 @@ const SearchCard = ({ data, onTitleChange }) => {
         </div>
       </CardTitle>
       <CardActions>
-        { key === 'shabad' && <Link to={`/shabad/${value}`}><Button ripple>Open Shabad</Button></Link> }
-        { key === 'sggs' && <Link to={`/SGGS/${value}`}><Button ripple>{`Open Ang ${value}`}</Button></Link> }
+        { key === 'shabad' && <Link to={`shabad/${value}`}><Button ripple>Open Shabad</Button></Link> }
+        { key === 'sggs' && <Link to={`SGGS/${value}`}><Button ripple>{`Open Ang ${value}`}</Button></Link> }
       </CardActions>
     </Card>
   );

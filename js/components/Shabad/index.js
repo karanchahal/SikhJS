@@ -43,7 +43,7 @@ export default withRouter(class Shabad extends Component {
             </div>
             <div>
               {
-                ang && <Button onClick={e => push(`/SGGS/${ang}`)} disabled={sourceId !== 'G'} ripple raised colored accent>
+                ang && <Button onClick={e => push(`SGGS/${ang}`)} disabled={sourceId !== 'G'} ripple raised colored accent>
                   {`Open Ang ${ang}`}
                 </Button>
               }

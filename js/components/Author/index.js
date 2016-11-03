@@ -21,7 +21,7 @@ export class AuthorChip extends Component {
   }
   render() {
     const { data, loading } = this.state;
-    return <Link to={`/author/${data.id}`}>
+    return <Link to={`author/${data.id}`}>
       <Chip style={{ margin: 5 }}>
         { loading ? 'Loading' : `${data.author} ${data.gurmukhi}` }
       </Chip>

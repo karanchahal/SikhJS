@@ -17,9 +17,9 @@ export const SearchCard = withRouter(props => {
     <CardTitle><span className="gurbani-text">{Gurmukhi}</span></CardTitle>
     <CardText><span style={{ textTransform: 'capitalize' }}>{Transliteration}</span></CardText>
     <CardActions>
-      <Button onClick={e => push(`/shabad/${ShabadID}`)}>Open Shabad</Button>
-      <Button onClick={e => push(`/SGGS/${PageNo}`)} disabled={SourceID !== 'G'}>{`Open Ang ${PageNo}`}</Button>
-      <Button onClick={e => push(`/SGGS/${PageNo}`)} disabled>Open Raag</Button>
+      <Button onClick={e => push(`shabad/${ShabadID}`)}>Open Shabad</Button>
+      <Button onClick={e => push(`SGGS/${PageNo}`)} disabled={SourceID !== 'G'}>{`Open Ang ${PageNo}`}</Button>
+      <Button onClick={e => push(`SGGS/${PageNo}`)} disabled>Open Raag</Button>
     </CardActions>
   </Card>
   );
